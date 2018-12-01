@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <link rel="stylesheet" href="style.css"> <!--link to css file-->
+       <link rel="stylesheet" href="normalize.css"> 
+       <meta charset="UTF-8">        
+       <meta name="viewport" content="width=device-width, intial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    </head>
+    <body>
+        <h1 id="title">Who Said that?</h1>
+        <div class="intro">
+            <ul>
+                <li>
+                    <p>Hi! What's your name?</p>
+                </li>
+                <li>
+                    <input id="inputName"  type="text" value="">
+                    <input type="submit" value="Start Playing" class="button">
+                </li>
+            </ul>
+        </div>
+        
+        <div class="game hide">  <!--before clicking on "start playing", this part is hidden-->
+            <li>
+                <p>Let's start playing</p>
+                <p class="question"></p>
+                <input type ="radio" class=""><p class="answer"></p>
+                <input type ="radio" class=""><p class="false1"></p>
+                <input type ="radio" class=""><p class="false2"></p>
+            </li>
+        </div>
+        
+        <div class="secondPart">
+            <img id="penseur" alt="photo" src="img/penseur.png/">
+        </div>
+        
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+/*----flex---*/
+.intro, #title, .secondPart, .game{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: red;
+    font-family: 'Inconsolata', monospace;
+    color: white !important;
+}
+
+#penseur{
+    transform: scale(0.4, 0.4);
+    position: relative;
+    margin-top: -300px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.hide{
+    display: none;
+}
+
