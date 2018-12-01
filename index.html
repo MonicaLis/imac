@@ -22,12 +22,17 @@
         
         <div class="game hide">  <!--before clicking on "start playing", this part is hidden-->
             <li>
-                <p>Let's start playing</p>
+                <p>Let's play!</p>
                 <p class="question"></p>
-                <input type ="radio" class=""><p class="answer"></p>
-                <input type ="radio" class=""><p class="false1"></p>
-                <input type ="radio" class=""><p class="false2"></p>
+                <input type ="radio" name="same" class="radio1"><p class="option1"></p> <!--they need to all have the same name so that only ONE can be selected-->
+                <input type ="radio" name="same" class="radio2"><p class="option2"></p>
+                <input type ="radio" name="same" class="radio3"><p class="option3"></p>
+                <input type="submit" value="Submit" class="button_game">
             </li>
+        </div>
+        
+        <div class="lost hide">
+            <p class="end_message"></p>
         </div>
         
         <div class="secondPart">
