@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html>
+
    <head>
        <link rel="stylesheet" href="style.css"> <!--link to css file-->
        <link rel="stylesheet" href="normalize.css"> 
        <meta charset="UTF-8">        
        <meta name="viewport" content="width=device-width, intial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+       <title>Who said that ?</title>
     </head>
+
+
     <body>
-        <h1 id="title">Who Said that?</h1>
-        <div class="intro">
+        <header><!--site header, logo+title and animations-->
+
+            <div id="logo" class="head"><!--dottedCircle-->
+                <div id="redCircle" class="head"></div><!--redCircle-->
+                <img id="WST" class="head" alt="WST" src="img/wst.png/"><!--text "WST?" logo-->
+                <img id="penseurHead" class="head" alt="penseur" src="img/tete_penseur.png/"><!--penseur's head logo-->
+            </div> 
+
+            <div id="siteName"><!--div for animation-->
+                <h1 id="title">Who Said that ?</h1><!--title-->
+            </div>
+
+        </header>
+
+        <section class="intro"><!--input name section-->
             <ul>
                 <li>
-                    <p>Hi! What's your name?</p>
+                    <p>Hi ! What's your name ?</p>
                 </li>
                 <li>
-                    <input id="inputName"  type="text" value="">
-                    <input type="submit" value="Start Playing" class="button">
+                    <input id="inputName"  type="text" value=""><!--input user name-->
+                    <input type="submit" value="Start Playing" class="button"><!--submit button-->
                 </li>
             </ul>
-        </div>
+        </section>
         
-        <div class="game hide">  <!--before clicking on "start playing", this part is hidden-->
-            <li>
-                <p>Let's play!</p>
-                <p class="question"></p>
-                <input type ="radio" name="same" class="radio1"><p class="option1"></p> <!--they need to all have the same name so that only ONE can be selected-->
-                <input type ="radio" name="same" class="radio2"><p class="option2"></p>
-                <input type ="radio" name="same" class="radio3"><p class="option3"></p>
-                <input type="submit" value="Submit" class="button_game">
-            </li>
-        </div>
+        <section class="game hide">  <!--Game, before clicking on "start playing", this part is hidden-->
+            <ul>
+            
+                <li><p>Let's play!</p></li>
+                <li><p class="question"></p></li>
+                <li><input type ="radio" name="same" class="radio1"><p class="option1"></p></li> 
+                <li><input type ="radio" name="same" class="radio2"><p class="option2"></p></li>
+                <li><input type ="radio" name="same" class="radio3"><p class="option3"></p></li>
+                <!--they need to all have the same name so that only ONE can be selected-->
+                <li><input type="submit" value="Submit" class="button_game"></li>
+            <ul>
+        </section>
         
-        <div class="lost hide">
-            <p class="end_message"></p>
-        </div>
+        <section class="lost hide"><!--this section appears when the user loses-->
+            <p id="end_message"></p><!--"Congratulation"-->
+        </section>
         
-        <div class="secondPart">
+        <footer class="secondPart"> <!--site footer-->
             <img id="penseur" alt="photo" src="img/penseur.png/">
-        </div>
+        </footer>
         
-        <script src="main.js"></script><!--lien vers jS-->
+        <script src="main.js"></script><!--lien vers JS-->
     </body>
 </html>

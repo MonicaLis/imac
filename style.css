@@ -1,26 +1,128 @@
+/*font*/
+@font-face{ /*new font for title*/
+    font-family: 'black-melody';
+    src: url('font/black_melody/Black-melody.otf');
+}
+
+@font-face{ /*new font for text*/
+    font-family: 'always-forever';
+    src: url('font/always_forever/Always-Forever.ttf');
+}
+
+body{
+    padding-top: 17vh;
+    background-color: #EAD1A1;
+    font-family: 'Always-Forever','black-melody','Inconsolata', monospace, sans-serif;
+    color: black !important;
+    letter-spacing: 1px;
+    font-size: 3em;
+    height:100vh;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+header{/*site header, logo+title and animations*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+#logo{/*dottedCircle*/
+    width: 200px;
+    height: 200px;
+    font-family: 'black-melody','Inconsolata', monospace, sans-serif;
+    letter-spacing: -5px;
+    font-size: 1.5em;
+    animation: showup 7s;/*appearance animation*/
+    animation-fill-mode: forwards;/*allows to leave the animation in its final state*/
+    position: relative;/*position reference*/
+    border-radius: 50%;
+    border: 4px dotted black;
+}
+
+#redCircle{/*redCircle*/
+    background: none;
+    border-radius:50%;
+    width:160px;
+    height:160px;
+    border:15px solid red;
+    box-shadow: 2px 2px 10px black inset;
+    position: absolute;/*position absolute relative to the dotted circle*/
+    margin: auto;
+    top: 50%;
+    left: 50%;/*the top left point is placed in the center of the circle*/
+    transform: translate3d(-50%, -50%, 0);/*we do a 50% translation to put the element in the center of the circle*/
+}
+
+#WST{/*text "WST?" logo*/
+    margin: -20px 0 0 0;
+    position: absolute;/*position absolute relative to the dotted circle*/
+    top: 50%;
+    left: 50%;/*the top left point is placed in the center of the circle*/
+    transform: scale(1.7) translate3d(-50%, -50%, 0);/*we increase the size and we do a 50% translation to put the element in the center of the circle*/
+}
+
+#penseurHead{ /*Penseur's head logo*/
+    top: 50%;
+    left: 50%;/*the top left point is placed in the center of the circle*/
+    transform: scale(0.85) translate3d(-50%, -50%, 0);/*we reduce the size and we do a 50% translation to put the element in the center of the circle*/
+    position: absolute;/*position absolute relative to the dotted circle*/
+}
+
+#siteName{/*div for animation with site title*/
+    overflow: hidden;
+    width:0px;
+    animation: reveal 7s;
+    animation-fill-mode: forwards;/*allows to leave the animation in its final state*/
+}
+
+h1{/*site title "Who said that ?"*/
+    font-size: 3em;
+    letter-spacing: 0;
+    font-family: 'black-melody','Inconsolata', monospace, sans-serif;
+    text-shadow: 1px 1px 90px #A77726CC;
+    animation: slidein 7s;
+    animation-fill-mode: forwards;/*allows to leave the animation in its final state*/
+}
+
+@keyframes showup {/*animation function, #logo appears*/
+    0% {opacity:0;}
+    30% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes slidein {/*h1 site title slides*/
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {/*#siteName, div of site title, appears*/
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:470px;}
+    80% {opacity:1;}
+    100% {opacity:1;width:470px;}
+}
+
 /*----flex---*/
-.intro, #title, .secondPart, .game{
+.intro, .game, .secondPart{/*input name section, Game part and site footer*/
     display: flex;
     justify-content: center;
 }
 
-body{
-    background-color: red;
-    font-family: 'Inconsolata', monospace;
-    color: white !important;
+ul{/*all lists, input name section and game part*/
+    list-style-type: none;
 }
 
-#penseur{
+.hide{/*allows to hide some parts*/
+    display: none;
+}
+
+#penseur{/*Penseur Image in the footer*/
     transform: scale(0.4, 0.4);
     position: relative;
     margin-top: -300px;
 }
-
-ul{
-    list-style-type: none;
-}
-
-.hide{
-    display: none;
-}
-
