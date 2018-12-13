@@ -29,7 +29,7 @@ const button_game = document.querySelector('.button_game');
 const introPage = document.querySelector('.intro');
 const gamePage = document.querySelector('.game');
 const lostPage = document.querySelector('.lost');
-const end_message = document.querySelector('.end_message');
+const end_message = document.querySelector('#end_message');
 
 const question = document.querySelector('.question');
 const option1 = document.querySelector('.option1');
