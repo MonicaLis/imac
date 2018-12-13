@@ -1,6 +1,6 @@
 /*-------------------------------------API: TO GET THE QUOTES------------------------------------------*/
 
-// Create a request variable and assign a new XMLHttpRequest object to it.
+// Create a request variable and assign a new XMLHttpRequest object to it. AJAX
 const request = new XMLHttpRequest();
 
 //I don't know why, but we need to define callback (for the next step)
@@ -24,7 +24,7 @@ request.open('GET', 'https://talaikis.com/api/quotes/', true);
 
 const name_entered = document.querySelector('#inputName');
 const button = document.querySelector('.button');
-const button_game = document.querySelector('.button_game')
+const button_game = document.querySelector('.button_game');
 
 const introPage = document.querySelector('.intro');
 const gamePage = document.querySelector('.game');
@@ -109,10 +109,13 @@ function playGame(){
     
     const random_nb1 = Math.floor(Math.random() * 100); //generates a random number integer from 0 to 99
     const random_nb2 = Math.floor(Math.random() * 100);
+    const random_nb3 = Math.floor(Math.random() * 100);
     
-     //this is to be 99.9% sure the two numbers won't be equal
-    if (random_nb1 == random_nb2) random_nb2 = Math.floor(Math.random() * 100); 
-
+     //this is to be 99.9% sure the three numbers won't be equal (if they are, recall the function)
+    if (random_nb1 == random_nb2 || random_nb1 == random_nb3 || random_nb2 == random_nb3) 
+    {
+        playGame(); 
+    }
                 /*general idea:
                     we're generating random numbers that we will be using for 3 reasons:
                         -to select a random quote and its author (1)
@@ -122,18 +125,19 @@ function playGame(){
     
     console.log(random_nb1);
     console.log(random_nb2);
+    console.log(random_nb3);
     
     var phrase = data[random_nb1].quote; // (1)
     var real_author = data[random_nb1].author; // (1)
     var wrong_author1 = data[random_nb2].author; //(2) to select the author of the quote n°random_nb2
-    var wrong_author2 = data[random_nb2 % 3].author;  //(2) to select the author of the quote n°(random_nb2 modulo 3)(change this pls)
+    var wrong_author2 = data[random_nb3].author;  //(2) to select the author of the quote n°random_nb3
 
     //display the quote 
     question.innerHTML = phrase;
 
     switch(true) {  //(3) using the random number to have different displays
         case (random_nb1 <= 30):
-            option1.innerHTML = '<span>'+real_author+'YAS'+'</span>';
+            option1.innerHTML = '<span>'+real_author+'</span>';
             option2.innerHTML = '<span>'+wrong_author1+'</span>';
             option3.innerHTML = '<span>'+wrong_author2+'</span>';
             place = radio1;
@@ -141,7 +145,7 @@ function playGame(){
 
         case (random_nb1 > 30 && random_nb1 < 60):
             option1.innerHTML = '<span>'+wrong_author2+'</span>';
-            option2.innerHTML = '<span>'+real_author+'YAS'+'</span>';
+            option2.innerHTML = '<span>'+real_author+'</span>';
             option3.innerHTML = '<span>'+wrong_author1+'</span>';
             place = radio2;
             break;
@@ -149,7 +153,7 @@ function playGame(){
         case (random_nb1 >= 60):
             option1.innerHTML = '<span>'+wrong_author1+'</span>';
             option2.innerHTML = '<span>'+wrong_author2+'</span>';
-            option3.innerHTML = '<span>'+real_author+'YAS'+'</span>';
+            option3.innerHTML = '<span>'+real_author+'</span>';
             place = radio3;
             break;
     }
@@ -161,7 +165,6 @@ function playGame(){
 
 //we need the onload function to access the JSON data, THIS IS WHERE WE CALL PLAYGAME !
 request.onload = function () {
-    //const data = JSON.parse(this.response);
     
     playGame();
 }
@@ -169,10 +172,5 @@ request.onload = function () {
 
 // Send request
 request.send();
-
-/*
-problems:
--someimes 2 equal fake answers sometimes
-*/
 
             
