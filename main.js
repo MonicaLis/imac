@@ -3,13 +3,6 @@
 // Create a request variable and assign a new XMLHttpRequest object to it. AJAX
 const request = new XMLHttpRequest();
 
-//I don't know why, but we need to define callback (for the next step)
-var map;
-function callback(cb) {
-    map = cb;
-    console.log(map);
-}
-
 //callback function to know whether the request has succeeded or failed
 request.onreadystatechange = () => {
     if (request.readyState == 4 && request.status == 200)
@@ -110,6 +103,11 @@ function playGame(){
     const random_nb1 = Math.floor(Math.random() * 100); //generates a random number integer from 0 to 99
     const random_nb2 = Math.floor(Math.random() * 100);
     const random_nb3 = Math.floor(Math.random() * 100);
+    
+    //everything unchecked at the beginning
+    radio1.checked = false;
+    radio2.checked = false;
+    radio3.checked = false;
     
      //this is to be 99.9% sure the three numbers won't be equal (if they are, recall the function)
     if (random_nb1 == random_nb2 || random_nb1 == random_nb3 || random_nb2 == random_nb3) 
