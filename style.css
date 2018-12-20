@@ -10,7 +10,7 @@
 }
 
 body{
-    padding-top: 17vh;
+    padding-top: 10vh;
     background-color: #EAD1A1;
     font-family: 'Always-Forever','black-melody','Inconsolata', monospace, sans-serif;
     color: black !important;
@@ -117,12 +117,114 @@ ul{/*all lists, input name section and game part*/
     list-style-type: none;
 }
 
+#hello{
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+#inputName {
+    background: none;
+    border: solid 1px black;
+    padding: 1px 6px;
+    border-radius: 15px 15px 15px 15px;
+    margin-right: 20px;
+}
+
+.button{
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px black;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#go{
+    text-align: center;
+    margin-top: 0;
+}
+
+#citation{
+    border: solid 4px black;
+    border-radius: 15px 15px 15px 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    word-wrap: break-word;
+    width: 800px;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.question{
+    margin: 0;
+}
+
+#answer li{
+    display: flex;
+}
+
+#answer li p{
+    margin: 0;
+    margin-left: 20px;
+}
+
+#validate{
+    display: flex;
+    justify-content: center;
+}
+
 .hide{/*allows to hide some parts*/
     display: none;
+}
+
+.lost{
+    border: solid 4px black;
+    border-radius: 15px 15px 15px 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 500px;
+    margin : auto;
+    margin-top: 70px;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #penseur{/*Penseur Image in the footer*/
     transform: scale(0.4, 0.4);
     position: relative;
     margin-top: -300px;
+}
+
+@media (max-width: 768px){
+
+    header{
+        transform: scale(0.5);
+        width: 700px;
+    }
+
+    .intro input[class="button"]{
+        margin-top: 20px;
+    }
+
+    #citation{
+        width: 200px;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    #validate{
+        margin-top: 30px;
+    }
+
+    .lost{
+        width: 200px;
+    }
+
+    footer{
+        margin-top: 200px;
+    }
+
 }

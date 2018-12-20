@@ -28,7 +28,7 @@
         <section class="intro"><!--input name section-->
             <ul>
                 <li>
-                    <p>Hi ! What's your name ?</p>
+                    <p id="hello">Hi ! What's your name ?</p>
                 </li>
                 <li>
                     <input id="inputName"  type="text" value=""><!--input user name-->
@@ -40,18 +40,22 @@
         <section class="game hide">  <!--Game, before clicking on "start playing", this part is hidden-->
             <ul>
             
-                <li><p>Let's play!</p></li>
-                <li><p class="question"></p></li>
-                <li><input type ="radio" name="same" class="radio1"><p class="option1"></p></li> 
-                <li><input type ="radio" name="same" class="radio2"><p class="option2"></p></li>
-                <li><input type ="radio" name="same" class="radio3"><p class="option3"></p></li>
-                <!--they need to all have the same name so that only ONE can be selected-->
-                <li><input type="submit" value="Submit" class="button_game"></li>
+                <li><p id="go">Let's play!</p></li>
+                <div id="citation">
+                    <li><p class="question"></p></li>
+                </div>
+                <div id="answer">   
+                    <li><input type ="radio" name="same" class="radio1"><p class="option1"></p></li> 
+                    <li><input type ="radio" name="same" class="radio2"><p class="option2"></p></li>
+                    <li><input type ="radio" name="same" class="radio3"><p class="option3"></p></li>
+                    <!--they need to all have the same name so that only ONE can be selected-->
+                </div>    
+                    <li id="validate"><input type="submit" value="Submit" class="button_game button"></li>
             <ul>
         </section>
         
         <section class="lost hide"><!--this section appears when the user loses-->
-            <p id="end_message"></p><!--"Congratulation"-->
+                <p id="end_message"></p><!--"Congratulation"-->
         </section>
         
         <footer class="secondPart"> <!--site footer-->
