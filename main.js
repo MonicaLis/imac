@@ -63,6 +63,7 @@ function startGame (){
 function endGame (){
     gamePage.classList.add('hide'); //the game page is hidden
     lostPage.classList.remove('hide'); //the lost page appears so that we can write the congratulations text
+    const name = name_entered.value;
     
     //congratulations messages in function of number of points won
     switch(true) {  
